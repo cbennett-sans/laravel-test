@@ -6,8 +6,8 @@ node('docker') {
             sh "cp .env.example .env"
             sh "php artisan key:generate"
         }
-        stage('Test') {
-            sh "./vendor/bin/phpunit"
-        }
+    } 
+    stage('Test') {
+        sh "./vendor/bin/phpunit"
     }
 }
