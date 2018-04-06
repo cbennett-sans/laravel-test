@@ -1,7 +1,7 @@
 node('docker') {
     checkout scm
     stage('Build') {
-        docker.image('php').inside {
+        docker.image('composer/composer').inside {
             sh "composer install"
             sh "cp .env.example .env"
             sh "php artisan key:generate"
