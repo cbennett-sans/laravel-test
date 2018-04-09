@@ -10,4 +10,5 @@ node('docker') {
             sh "./vendor/bin/phpunit"
         }
     }
+    sh "git tag build_${gitCommit}
 }
